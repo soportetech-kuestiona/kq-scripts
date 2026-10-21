@@ -38,6 +38,9 @@ línea sigue ahí si se rehace la página entera.
   `isSubmit=true` cuando el form pasa la validación. `_form_callback` no sirve: no se ejecuta si
   el form tiene redirección configurada en AC.
 - Si la línea aparece dos veces en la página, solo actúa una.
+- También bloquea el envío si hay una casilla `required` sin marcar dentro del form (la de política de
+  privacidad). El validador de AC no comprueba casillas sueltas y el embed lleva `novalidate`, así que
+  sin esto el registro entraba igual. Sin el script, una landing con form de AC no exige el consentimiento.
 - Webhook por defecto: LD02. Para otro escenario, `data-hook="https://hook.eu2.make.com/..."`.
 - GitHub Pages cachea unos 10 minutos: un cambio aquí llega a todas las landings en ese margen,
   sin tocarlas. Cualquier cambio rompe todas a la vez, así que probar antes con `?kqdebug=1`.

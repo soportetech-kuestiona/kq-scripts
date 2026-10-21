@@ -57,6 +57,20 @@
     var form = ev.target;
     if (!form || !form.id || form.id.indexOf('_form_') !== 0) return;
 
+    // El validador de AC no comprueba una casilla obligatoria suelta (solo grupos) y el form
+    // lleva novalidate, así que la de privacidad se podía saltar. La cortamos aquí, antes de
+    // que el evento llegue al script de AC.
+    var sinMarcar = form.querySelector('input[type="checkbox"][required]:not(:checked)');
+    if (sinMarcar) {
+      ev.preventDefault();
+      ev.stopImmediatePropagation();
+      sinMarcar.setCustomValidity('Debes aceptar la política de privacidad para continuar.');
+      sinMarcar.reportValidity();
+      sinMarcar.addEventListener('change', function () { sinMarcar.setCustomValidity(''); }, { once: true });
+      log('envío bloqueado: casilla obligatoria sin marcar', sinMarcar.name);
+      return;
+    }
+
     var fbclid = paramUrl('fbclid');
     var fbc = cookie('_fbc') || (fbclid ? 'fb.1.' + Date.now() + '.' + fbclid : '');
 
