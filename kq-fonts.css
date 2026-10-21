@@ -1,0 +1,15 @@
+/*
+ * Kuestiona OS para web. Derivada de Source Sans 3 (SIL OFL 1.1, ver fonts/OFL.txt).
+ * Recortada a latín + castellano (~40 KB por peso) con kerning y acentos completos.
+ * Familia con nombre propio ("Kuestiona OS Web") para no chocar con las
+ * declaraciones antiguas de "Kuestiona OS" que aún cargan algunas landings.
+ *
+ * Uso: <link rel="stylesheet" href="https://soportetech-kuestiona.github.io/kq-scripts/kq-fonts.css">
+ */
+@font-face{font-family:"Kuestiona OS Web";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/KuestionaOS-Regular.woff2") format("woff2")}
+@font-face{font-family:"Kuestiona OS Web";font-style:normal;font-weight:500;font-display:swap;src:url("fonts/KuestionaOS-Medium.woff2") format("woff2")}
+@font-face{font-family:"Kuestiona OS Web";font-style:normal;font-weight:600;font-display:swap;src:url("fonts/KuestionaOS-Semibold.woff2") format("woff2")}
+@font-face{font-family:"Kuestiona OS Web";font-style:normal;font-weight:700;font-display:swap;src:url("fonts/KuestionaOS-Bold.woff2") format("woff2")}
+@font-face{font-family:"Kuestiona OS Web";font-style:normal;font-weight:800 900;font-display:swap;src:url("fonts/KuestionaOS-Black.woff2") format("woff2")}
+@font-face{font-family:"Kuestiona OS Web";font-style:italic;font-weight:100 500;font-display:swap;src:url("fonts/KuestionaOS-Italic.woff2") format("woff2")}
+@font-face{font-family:"Kuestiona OS Web";font-style:italic;font-weight:600 900;font-display:swap;src:url("fonts/KuestionaOS-BoldItalic.woff2") format("woff2")}

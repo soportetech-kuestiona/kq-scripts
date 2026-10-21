@@ -45,3 +45,19 @@ línea sigue ahí si se rehace la página entera.
 - GitHub Pages cachea unos 10 minutos: un cambio aquí llega a todas las landings en ese margen,
   sin tocarlas. Cualquier cambio rompe todas a la vez, así que probar antes con `?kqdebug=1`.
 - Las landings con form que hace POST directo a Make (tipo `may-lanz-2610`) no necesitan este script.
+
+## kq-fonts.css
+
+Tipografía Kuestiona OS para las landings (derivada de Source Sans 3, licencia SIL OFL en `fonts/OFL.txt`).
+Los woff2 están recortados a latín y castellano, unos 40 KB por peso, con kerning y acentos.
+
+```html
+<link rel="stylesheet" href="https://soportetech-kuestiona.github.io/kq-scripts/kq-fonts.css">
+```
+
+La familia se llama `"Kuestiona OS Web"`, no `"Kuestiona OS"`, para no mezclarse con las declaraciones
+antiguas que siguen en algunas landings y que apuntan a unos woff2 que Chrome pintaba con las letras
+separadas. Pesos: 400, 500, 600, 700, 800-900 y cursiva normal y negrita.
+
+Si hay que regenerar los archivos, partir de los TTF originales (no de woff2 ya recortados) con
+`pyftsubset` conservando `--layout-features='*'`.
